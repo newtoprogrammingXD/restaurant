@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delicious Bites - Restaurant</title>
+
+  <style>
+    /* Color Theme */
+    :root {
+      --primary-color: #e67e22; /* Orange */
+      --secondary-color: #2c3e50; /* Dark Blue */
+      --background-color: #f9f9f9; /* Light Background */
+      --text-color: #333;
+      --white-color: #ffffff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+
+    nav {
+      background-color: var(--secondary-color);
+      color: var(--white-color);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: var(--white-color);
+      text-decoration: none;
+    }
+
+    /* Header with Background Image */
+    header {
+      <header style="background: url("C:/Users/rohit/OneDrive/Documents/20221CSD0026/images/restaurant.jpg") center/cover no-repeat;">
+      height: 60vh;
+      color: var(--white-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 2px 2px 4px #000;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    #menu .menu-category {
+      margin-bottom: 2rem;
+    }
+
+    .menu-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .menu-items div {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 200px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s; /* Hover effect */
+    }
+
+    .menu-items div:hover {
+      transform: scale(1.05); /* Slight zoom */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Stronger shadow */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    form input, form textarea, form button {
+      margin-bottom: 1rem;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s; /* Button hover effect */
+    }
+
+    form button:hover {
+      background-color: #cf711f;
+      transform: translateY(-3px); /* Button lift */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Stronger shadow */
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      color: var(--white-color);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Gallery Carousel */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 800px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .carousel-slide {
+      display: flex;
+      transition: 0.5s;
+    }
+
+    .carousel-slide img {
+      min-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 30px;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    /* Dots */
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .active-dot {
+      background-color: #717171;
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="logo">Delicious Bites</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reservation">Reservation</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero Section -->
+<header id="home">
+  <h1>Welcome to Delicious Bites</h1>
+  <p>Where Every Bite Feels Like Home</p>
+</header>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <p>We are passionate about serving freshly made delicious food with love and care.</p>
+</section>
+
+<!-- Menu Section -->
+<section id="menu">
+  <h2>Our Menu</h2>
+  
+  <div class="menu-category">
+    <h3>Starters</h3>
+    <div class="menu-items">
+      <div>Paneer Tikka</div>
+      <div>Veg Spring Roll</div>
+      <div>Chicken Wings</div>
+    </div>
+  </div>
+
+  <div class="menu-category">
+    <h3>Main Course</h3>
+    <div class="menu-items">
+      <div>Butter Chicken</div>
+      <div>Veg Biryani</div>
+      <div>Paneer Butter Masala</div>
+    </div>
+  </div>
+
+  <div class="menu-category">
+    <h3>Desserts</h3>
+    <div class="menu-items">
+      <div>Gulab Jamun</div>
+      <div>Ice Cream Sundae</div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section (with Carousel) -->
+<section id="gallery">
+  <h2>Gallery</h2>
+
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="C:\Users\rohit\OneDrive\Documents\20221CSD0026\images\paneertikka.jpg" alt="Paneer Tikka">
+      <img src="C:\Users\rohit\OneDrive\Documents\20221CSD0026\images\chickenbiryani.jpg" alt="Chicken Biryani">
+      <img src="C:\Users\rohit\OneDrive\Documents\20221CSD0026\images\dessert.jpg" alt="Dessert Delight">
+      <img src="images/restaurant-interior.jpg" alt="Restaurant Interior">
+    </div>
+
+    <button class="prev" onclick="moveSlide(-1)">❮</button>
+    <button class="next" onclick="moveSlide(1)">❯</button>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots" id="dots"></div>
+</section>
+
+<!-- Reservation Section -->
+<section id="reservation">
+  <h2>Reserve a Table</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <input type="text" placeholder="Phone Number" required>
+    <input type="date" required>
+    <input type="time" required>
+    <textarea placeholder="Special Requests" rows="4"></textarea>
+    <button type="submit">Reserve</button>
+  </form>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: contact@deliciousbites.com</p>
+  <p>Phone: +91-1234567890</p>
+  <p>Address: 123, Main Street, Your City</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Delicious Bites. All Rights Reserved.</p>
+</footer>
+
+<!-- Carousel JavaScript -->
+<script>
+let slideIndex = 0;
+const slides = document.querySelector('.carousel-slide');
+const totalSlides = slides.children.length;
+const dotsContainer = document.getElementById('dots');
+
+// Create Dots dynamically
+for (let i = 0; i < totalSlides; i++) {
+  let dot = document.createElement('span');
+  dot.classList.add('dot');
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+}
+
+const dots = document.querySelectorAll('.dot');
+
+function updateDots() {
+  dots.forEach(dot => dot.class
