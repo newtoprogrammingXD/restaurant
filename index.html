@@ -5,38 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Delicious Bites - Restaurant</title>
 
+  <!-- Google Fonts for Better Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
     /* Color Theme */
-:root {
-  --primary-color: #e67e22; 
-  --secondary-color: #2c3e50;
-  --background-color: #fff8f0; 
-  --text-color: #333;
-  --white-color: #ffffff;
-}
-
-
+    :root {
+      --primary-color: #e67e22; 
+      --secondary-color: #2c3e50;
+      --background-color: #fff8f0;
+      --text-color: #333;
+      --white-color: #ffffff;
+      --hover-color: #cf711f;
+    }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
       background-color: var(--background-color);
       color: var(--text-color);
     }
 
+    /* Navigation Bar Styles */
     nav {
       background-color: var(--secondary-color);
       color: var(--white-color);
-      padding: 1rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     nav .logo {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white-color);
+      text-transform: uppercase;
     }
 
     nav ul {
@@ -48,11 +54,46 @@
 
     nav ul li {
       margin-left: 20px;
+      position: relative;
     }
 
     nav ul li a {
       color: var(--white-color);
       text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 5px 10px;
+      transition: background-color 0.3s, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: var(--hover-color);
+      color: var(--white-color);
+      border-radius: 5px;
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+
+      nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+
+      nav ul li a {
+        font-size: 1.2rem;
+        padding: 10px;
+      }
     }
 
     /* Header with Background Image */
