@@ -134,58 +134,163 @@
       text-align: center;
     }
 
-    /* Enhanced Auto-Slider Styles */
-    .slider {
-      width: 90%;
-      max-width: 600px;
-      margin: auto;
+    /* Enhanced Gallery Styles */
+    .gallery-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .gallery-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      position: relative;
+    }
+
+    .gallery-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 15px auto;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery-item {
       position: relative;
       overflow: hidden;
-      border-radius: 15px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      aspect-ratio: 1/1;
     }
 
-    .slides {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-      width: 400%;
+    .gallery-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
 
-    .slide {
+    .gallery-image {
       width: 100%;
-      flex-shrink: 0;
-      overflow: hidden;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
 
-    .slide img {
+    .gallery-item:hover .gallery-image {
+      transform: scale(1.1);
+    }
+
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 15px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .image-overlay {
+      transform: translateY(0);
+    }
+
+    .image-title {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .image-desc {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
-      border-radius: 15px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .slide img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-
-    .navigation {
-      display: flex;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+      align-items: center;
       justify-content: center;
-      margin-top: 1rem;
     }
 
-    .nav-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #bbb;
-      margin: 0 5px;
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 5px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .lightbox-caption {
+      color: white;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: color 0.3s;
     }
 
-    .nav-dot.active {
-      background: #717171;
+    .close-lightbox:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-arrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      transform: translateY(-50%);
+    }
+
+    .arrow {
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      background: rgba(0,0,0,0.5);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .arrow:hover {
+      background: var(--primary-color);
+      transform: scale(1.1);
     }
 
     /* Smooth Scroll */
@@ -253,26 +358,69 @@
   </div>
 </section>
 
-<!-- Gallery Section with Auto-Slider -->
+<!-- Enhanced Gallery Section -->
 <section id="gallery">
-  <h2>Gallery</h2>
-
-  <div class="slider" id="autoSlider">
-    <div class="slides">
-      <div class="slide"><img src="paneertikka.jpg" alt="Paneer Tikka"></div>
-      <div class="slide"><img src="chickenbiryani.jpg" alt="Chicken Biryani"></div>
-      <div class="slide"><img src="dessert.jpg" alt="Dessert Delight"></div>
-      <div class="slide"><img src="restaurant-interior.jpg" alt="Restaurant Interior"></div>
-    </div>
-
-    <div class="navigation" id="dotNav">
-      <span class="nav-dot" onclick="goToSlide(0)"></span>
-      <span class="nav-dot" onclick="goToSlide(1)"></span>
-      <span class="nav-dot" onclick="goToSlide(2)"></span>
-      <span class="nav-dot" onclick="goToSlide(3)"></span>
+  <div class="gallery-container">
+    <h2 class="gallery-title">Our Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="paneertikka.jpg" alt="Paneer Tikka" class="gallery-image">
+        <div class="image-overlay">
+          <h3 class="image-title">Paneer Tikka</h3>
+          <p class="image-desc">Marinated cottage cheese grilled to perfection</p>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="chickenbiryani.jpg" alt="Chicken Biryani" class="gallery-image">
+        <div class="image-overlay">
+          <h3 class="image-title">Chicken Biryani</h3>
+          <p class="image-desc">Aromatic rice with tender chicken pieces</p>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="dessert.jpg" alt="Dessert Delight" class="gallery-image">
+        <div class="image-overlay">
+          <h3 class="image-title">Dessert Platter</h3>
+          <p class="image-desc">Sweet endings to your meal</p>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="restaurant-interior.jpg" alt="Restaurant Interior" class="gallery-image">
+        <div class="image-overlay">
+          <h3 class="image-title">Our Ambience</h3>
+          <p class="image-desc">Elegant dining experience</p>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="chef.jpg" alt="Chef Cooking" class="gallery-image">
+        <div class="image-overlay">
+          <h3 class="image-title">Our Chef</h3>
+          <p class="image-desc">Master chef preparing your meal</p>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="drinks.jpg" alt="Refreshing Drinks" class="gallery-image">
+        <div class="image-overlay">
+          <h3 class="image-title">Signature Drinks</h3>
+          <p class="image-desc">Refreshing beverages</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+  <div class="nav-arrows">
+    <div class="arrow" onclick="changeSlide(-1)">&#10094;</div>
+    <div class="arrow" onclick="changeSlide(1)">&#10095;</div>
+  </div>
+  <div class="lightbox-content">
+    <img id="lightbox-image" class="lightbox-image" src="">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+</div>
 
 <!-- Reservation Section -->
 <section id="reservation">
@@ -301,38 +449,97 @@
   <p>&copy; 2025 Delicious Bites. All Rights Reserved.</p>
 </footer>
 
-<!-- Carousel JavaScript -->
+<!-- Gallery JavaScript -->
 <script>
-  const slides = document.querySelector('#autoSlider .slides');
-  const dots = document.querySelectorAll('#dotNav .nav-dot');
-  let index = 0;
-  const totalSlides = dots.length;
+  // Gallery images data
+  const galleryImages = [
+    {
+      src: "paneertikka.jpg",
+      title: "Paneer Tikka",
+      desc: "Marinated cottage cheese grilled to perfection"
+    },
+    {
+      src: "chickenbiryani.jpg",
+      title: "Chicken Biryani",
+      desc: "Aromatic rice with tender chicken pieces"
+    },
+    {
+      src: "dessert.jpg",
+      title: "Dessert Platter",
+      desc: "Sweet endings to your meal"
+    },
+    {
+      src: "restaurant-interior.jpg",
+      title: "Our Ambience",
+      desc: "Elegant dining experience"
+    },
+    {
+      src: "chef.jpg",
+      title: "Our Chef",
+      desc: "Master chef preparing your meal"
+    },
+    {
+      src: "drinks.jpg",
+      title: "Signature Drinks",
+      desc: "Refreshing beverages"
+    }
+  ];
 
-  function updateSlider() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
+  let currentSlide = 0;
+
+  // Open lightbox
+  function openLightbox(index) {
+    currentSlide = index;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    
+    lightboxImg.src = galleryImages[index].src;
+    lightboxCaption.innerHTML = `<strong>${galleryImages[index].title}</strong> - ${galleryImages[index].desc}`;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
 
-  function goToSlide(i) {
-    index = i;
-    updateSlider();
-    resetAutoSlide();
+  // Close lightbox
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = 'auto';
   }
 
-  function autoSlide() {
-    index = (index + 1) % totalSlides;
-    updateSlider();
+  // Change slide in lightbox
+  function changeSlide(direction) {
+    currentSlide += direction;
+    
+    // Wrap around if at beginning or end
+    if (currentSlide < 0) {
+      currentSlide = galleryImages.length - 1;
+    } else if (currentSlide >= galleryImages.length) {
+      currentSlide = 0;
+    }
+    
+    openLightbox(currentSlide);
   }
 
-  let auto = setInterval(autoSlide, 3000);
+  // Close lightbox when clicking outside image
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeLightbox();
+    }
+  });
 
-  function resetAutoSlide() {
-    clearInterval(auto);
-    auto = setInterval(autoSlide, 3000);
-  }
-
-  updateSlider(); // Initialize first dot as active
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display === 'flex') {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        changeSlide(-1);
+      } else if (e.key === 'ArrowRight') {
+        changeSlide(1);
+      }
+    }
+  });
 </script>
 
 </body>
