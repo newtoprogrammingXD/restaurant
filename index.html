@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,402 +8,323 @@
   <style>
     /* Color Theme */
     :root {
-      --primary-color: #e67e22; /* Warm orange */
-      --primary-light: #f39c12;
-      --secondary-color: #2c3e50; /* Dark blue */
-      --background-light: #fff9f2; /* Warm off-white */
-      --section-bg: #fff5e8; /* Warmer section background */
+      --primary-color: #e67e22; /* Orange */
+      --secondary-color: #2c3e50; /* Dark Blue */
+      --background-color: #f4f7f8; /* Light grey */
       --text-color: #333;
       --white-color: #ffffff;
     }
 
-    /* Smooth scrolling */
-    html {
-      scroll-behavior: smooth;
-    }
+```
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-light);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
 
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: var(--secondary-color);
-      color: var(--white-color);
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
 
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
 
-    nav ul li {
-      margin-left: 20px;
-    }
+nav ul li {
+  margin-left: 20px;
+}
 
-    nav ul li a {
-      color: var(--white-color);
-      text-decoration: none;
-      transition: color 0.3s;
-      font-weight: 500;
-    }
+nav ul li a {
+  color: var(--white-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-    nav ul li a:hover {
-      color: var(--primary-color);
-    }
+nav ul li a:hover {
+  color: var(--primary-color);
+}
 
-    /* Header/Hero Section */
-    header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-      height: 80vh;
-      color: var(--white-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-      margin-top: 60px;
-    }
+/* Header/Hero Section */
+header {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+  height: 80vh;
+  color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  margin-top: 60px;
+}
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-    }
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
 
-    .btn {
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: var(--white-color);
-      padding: 12px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.9rem;
-      border: none;
-      cursor: pointer;
-    }
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 10px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
 
-    .btn:hover {
-      background-color: var(--primary-light);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+.btn:hover {
+  background-color: #d35400;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-    /* Sections */
-    section {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+/* Sections */
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    /* Alternating section backgrounds */
-    section:nth-child(even) {
-      background-color: var(--section-bg);
-    }
+section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+  position: relative;
+}
 
-    section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--secondary-color);
-      position: relative;
-      font-size: 2.2rem;
-    }
+section h2:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 15px auto;
+}
 
-    section h2:after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: var(--primary-color);
-      margin: 15px auto;
-      border-radius: 2px;
-    }
+/* Menu Section */
+#menu .menu-category {
+  margin-bottom: 3rem;
+}
 
-    /* About Section */
-    #about {
-      text-align: center;
-    }
+#menu .menu-category h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
 
-    #about p {
-      max-width: 800px;
-      margin: 0 auto 1.5rem;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
 
-    /* Menu Section */
-    #menu .menu-category {
-      margin-bottom: 3rem;
-    }
+.menu-item {
+  background: var(--white-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
 
-    #menu .menu-category h3 {
-      color: var(--secondary-color);
-      margin-bottom: 1.5rem;
-      text-align: center;
-      font-size: 1.5rem;
-    }
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 
-    .menu-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
 
-    .menu-item {
-      background: var(--white-color);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-      border: 1px solid rgba(0,0,0,0.05);
-    }
+.menu-item-content {
+  padding: 1.5rem;
+}
 
-    .menu-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    }
+.menu-item h4 {
+  margin: 0 0 0.5rem;
+  color: var(--secondary-color);
+}
 
-    .menu-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 3px solid var(--primary-color);
-    }
+.menu-item p {
+  margin: 0 0 1rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
 
-    .menu-item-content {
-      padding: 1.5rem;
-    }
+.price {
+  font-weight: bold;
+  color: var(--primary-color);
+}
 
-    .menu-item h4 {
-      margin: 0 0 0.5rem;
-      color: var(--secondary-color);
-      font-size: 1.2rem;
-    }
+/* Gallery Section */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
 
-    .menu-item p {
-      margin: 0 0 1rem;
-      color: var(--text-color);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 200px;
+}
 
-    .price {
-      font-weight: bold;
-      color: var(--primary-color);
-      font-size: 1.1rem;
-    }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
 
-    /* Gallery Section */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
 
-    .gallery-item {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      height: 220px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(230, 126, 34, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: white;
+}
 
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
 
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
+.gallery-overlay i {
+  font-size: 2.5rem;
+  color: var(--light-text);
+  margin-bottom: 1rem;
+}
 
-    .gallery-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(230, 126, 34, 0.85);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
+.gallery-overlay h3 {
+  color: var(--light-text);
+  font-size: 1.2rem;
+}
 
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
+/* Reservation Form */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--white-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-    .gallery-overlay h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
+.form-group {
+  margin-bottom: 1.5rem;
+}
 
-    /* Reservation Form */
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      background: var(--white-color);
-      padding: 2.5rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
 
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+}
 
-    form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: var(--secondary-color);
-    }
+form textarea {
+  height: 100px;
+}
 
-    form input,
-    form select,
-    form textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-family: inherit;
-      font-size: 1rem;
-      transition: all 0.3s;
-    }
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-    form input:focus,
-    form select:focus,
-    form textarea:focus {
-      outline: none;
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
-    }
+form button:hover {
+  background-color: #d35400;
+}
 
-    form textarea {
-      height: 120px;
-      resize: vertical;
-    }
+/* Contact Section */
+#contact {
+  text-align: center;
+}
 
-    form button {
-      width: 100%;
-      padding: 14px;
-      background-color: var(--primary-color);
-      color: var(--white-color);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-size: 1rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+/* Footer */
+footer {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
 
-    form button:hover {
-      background-color: var(--primary-light);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .menu-items {
+    grid-template-columns: 1fr;
+  }
+}
+```
 
-    /* Contact Section */
-    #contact {
-      text-align: center;
-    }
-
-    .contact-info {
-      background: var(--white-color);
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 0 auto;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-
-    .contact-info p {
-      margin: 1rem 0;
-      font-size: 1.1rem;
-    }
-
-    .contact-info strong {
-      color: var(--primary-color);
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--secondary-color);
-      color: var(--white-color);
-      text-align: center;
-      padding: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    footer p {
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-      
-      header h1 {
-        font-size: 2.2rem;
-      }
-      
-      .menu-items {
-        grid-template-columns: 1fr;
-      }
-      
-      section {
-        padding: 4rem 1.5rem;
-      }
-      
-      section h2 {
-        font-size: 1.8rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -420,6 +342,7 @@
   </nav>
 
   <!-- Hero Section -->
+
   <header id="home">
     <h1>Welcome to Delicious Bites</h1>
     <p>Where Every Bite Feels Like Home</p>
@@ -427,100 +350,106 @@
   </header>
 
   <!-- About Section -->
+
   <section id="about">
     <h2>About Us</h2>
-    <p>At Delicious Bites, we believe that great food starts with the finest ingredients. Our chefs combine traditional recipes with modern techniques to create unforgettable dining experiences.</p>
-    <p>Every dish tells a story - of heritage, passion, and culinary artistry. We invite you to be part of our story and experience authentic flavors crafted with love and care.</p>
+    <p>We are passionate about serving freshly made delicious food with love and care. Our restaurant has been serving authentic flavors since 2010, using only the finest ingredients sourced from local farmers and producers.</p>
+    <p>Our chefs combine traditional recipes with modern techniques to create dishes that delight both the eyes and the palate. We take pride in offering a warm, welcoming atmosphere where every guest feels like family.</p>
   </section>
 
   <!-- Menu Section -->
+
   <section id="menu">
     <h2>Our Menu</h2>
-    
-    <div class="menu-category">
-      <h3>Starters</h3>
-      <div class="menu-items">
-        <div class="menu-item">
-          <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Paneer Tikka">
-          <div class="menu-item-content">
-            <h4>Paneer Tikka</h4>
-            <p>Marinated cottage cheese grilled to perfection with traditional spices and served with mint chutney</p>
-            <span class="price">₹250</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img src="https://images.unsplash.com/photo-1601050690117-94b5b7e50a33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Chicken Wings">
-          <div class="menu-item-content">
-            <h4>Tandoori Wings</h4>
-            <p>Crispy chicken wings marinated in yogurt and traditional spices, cooked in clay oven</p>
-            <span class="price">₹320</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Spring Roll">
-          <div class="menu-item-content">
-            <h4>Veg Spring Roll</h4>
-            <p>Crispy rolls stuffed with fresh seasonal vegetables and served with sweet chili sauce</p>
-            <span class="price">₹180</span>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="menu-category">
-      <h3>Main Course</h3>
-      <div class="menu-items">
-        <div class="menu-item">
-          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Butter Chicken">
-          <div class="menu-item-content">
-            <h4>Butter Chicken</h4>
-            <p>Tender chicken pieces in rich tomato gravy with aromatic spices and fresh cream</p>
-            <span class="price">₹350</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Biryani">
-          <div class="menu-item-content">
-            <h4>Vegetable Biryani</h4>
-            <p>Fragrant basmati rice cooked with mixed vegetables and authentic biryani spices</p>
-            <span class="price">₹300</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img src="https://images.unsplash.com/photo-1633945274309-2c16cf8787b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Paneer Butter Masala">
-          <div class="menu-item-content">
-            <h4>Paneer Butter Masala</h4>
-            <p>Cottage cheese cubes in creamy tomato gravy with aromatic spices</p>
-            <span class="price">₹280</span>
-          </div>
-        </div>
+```
+<div class="menu-category">
+  <h3>Starters</h3>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Paneer Tikka">
+      <div class="menu-item-content">
+        <h4>Paneer Tikka</h4>
+        <p>Marinated cottage cheese grilled to perfection</p>
+        <span class="price">₹250</span>
       </div>
     </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1601050690117-94b5b7e50a33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Chicken Wings">
+      <div class="menu-item-content">
+        <h4>Chicken Wings</h4>
+        <p>Crispy wings with our signature sauce</p>
+        <span class="price">₹320</span>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Spring Roll">
+      <div class="menu-item-content">
+        <h4>Veg Spring Roll</h4>
+        <p>Crispy rolls with fresh vegetables</p>
+        <span class="price">₹180</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <div class="menu-category">
-      <h3>Desserts</h3>
-      <div class="menu-items">
-        <div class="menu-item">
-          <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Gulab Jamun">
-          <div class="menu-item-content">
-            <h4>Gulab Jamun</h4>
-            <p>Soft milk dumplings soaked in fragrant sugar syrup, served warm</p>
-            <span class="price">₹120</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Ice Cream">
-          <div class="menu-item-content">
-            <h4>Kulfi</h4>
-            <p>Traditional Indian ice cream with pistachio, cardamom and saffron flavors</p>
-            <span class="price">₹150</span>
-          </div>
-        </div>
+<div class="menu-category">
+  <h3>Main Course</h3>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Butter Chicken">
+      <div class="menu-item-content">
+        <h4>Butter Chicken</h4>
+        <p>Tender chicken in rich tomato gravy</p>
+        <span class="price">₹350</span>
       </div>
     </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Biryani">
+      <div class="menu-item-content">
+        <h4>Veg Biryani</h4>
+        <p>Fragrant rice with mixed vegetables</p>
+        <span class="price">₹300</span>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1633945274309-2c16cf8787b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Paneer Butter Masala">
+      <div class="menu-item-content">
+        <h4>Paneer Butter Masala</h4>
+        <p>Cottage cheese in creamy tomato sauce</p>
+        <span class="price">₹280</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-category">
+  <h3>Desserts</h3>
+  <div class="menu-items">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Gulab Jamun">
+      <div class="menu-item-content">
+        <h4>Gulab Jamun</h4>
+        <p>Soft milk balls in sugar syrup</p>
+        <span class="price">₹120</span>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Ice Cream">
+      <div class="menu-item-content">
+        <h4>Ice Cream Sundae</h4>
+        <p>Vanilla ice cream with toppings</p>
+        <span class="price">₹150</span>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- Gallery Section -->
+
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
@@ -528,80 +457,90 @@
         <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Paneer Tikka">
         <div class="gallery-overlay">
           <h3>Paneer Tikka</h3>
-          <p>Our signature starter dish</p>
+          <p>Our signature starter</p>
         </div>
       </div>
       <div class="gallery-item">
         <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Butter Chicken">
         <div class="gallery-overlay">
           <h3>Butter Chicken</h3>
-          <p>Customer favorite main course</p>
+          <p>Customer favorite</p>
         </div>
       </div>
       <div class="gallery-item">
         <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Dessert">
         <div class="gallery-overlay">
           <h3>Desserts</h3>
-          <p>Sweet endings to your meal</p>
+          <p>Sweet endings</p>
         </div>
       </div>
       <div class="gallery-item">
         <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80" alt="Restaurant">
         <div class="gallery-overlay">
           <h3>Our Ambience</h3>
-          <p>Warm and welcoming atmosphere</p>
+          <p>Warm and welcoming</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Reservation Section -->
+  <!-- Reservation Section (Updated with FormSubmit) -->
+
   <section id="reservation">
     <h2>Reserve a Table</h2>
-    <form>
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" placeholder="Your Name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Your Email</label>
-        <input type="email" id="email" placeholder="Your Email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="Phone Number" required>
-      </div>
-      <div class="form-group">
-        <label for="date">Date</label>
-        <input type="date" id="date" required>
-      </div>
-      <div class="form-group">
-        <label for="time">Time</label>
-        <input type="time" id="time" required>
-      </div>
-      <div class="form-group">
-        <label for="guests">Number of Guests</label>
-        <select id="guests" required>
-          <option value="">Select</option>
-          <option value="1">1 Person</option>
-          <option value="2">2 People</option>
-          <option value="3">3 People</option>
-          <option value="4">4 People</option>
-          <option value="5+">5+ People</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="requests">Special Requests</label>
-        <textarea id="requests" rows="4" placeholder="Any special requirements?"></textarea>
-      </div>
-      <button type="submit" class="btn">Reserve Now</button>
-    </form>
+    <form action="https://formsubmit.co/YOUR_EMAIL@EXAMPLE.COM" method="POST">
+      <!-- Add these hidden fields -->
+      <input type="hidden" name="_subject" value="New Table Reservation!">
+      <input type="hidden" name="_autoresponse" value="Thank you for booking at Delicious Bites! We'll confirm your reservation shortly.">
+      <input type="hidden" name="_template" value="table">
+
+```
+  <div class="form-group">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+  </div>
+  <div class="form-group">
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" required>
+  </div>
+  <div class="form-group">
+    <label for="time">Time</label>
+    <input type="time" id="time" name="time" required>
+  </div>
+  <div class="form-group">
+    <label for="guests">Number of Guests</label>
+    <select id="guests" name="guests" required>
+      <option value="">Select</option>
+      <option value="1">1 Person</option>
+      <option value="2">2 People</option>
+      <option value="3">3 People</option>
+      <option value="4">4 People</option>
+      <option value="5+">5+ People</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="requests">Special Requests</label>
+    <textarea id="requests" name="requests" rows="4" placeholder="Any special requirements?"></textarea>
+  </div>
+  <button type="submit" class="btn">Reserve Now</button>
+</form>
+```
+
   </section>
 
   <!-- Contact Section -->
+
   <section id="contact">
     <h2>Contact Us</h2>
-    <div class="contact-info">
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
       <p><strong>Email:</strong> contact@deliciousbites.com</p>
       <p><strong>Phone:</strong> +91-1234567890</p>
       <p><strong>Address:</strong> 123, Main Street, Bangalore, India</p>
@@ -610,6 +549,7 @@
   </section>
 
   <!-- Footer -->
+
   <footer>
     <p>&copy; 2023 Delicious Bites. All Rights Reserved.</p>
   </footer>
@@ -630,12 +570,12 @@
       });
     });
 
-    // Form submission
+    // Form submission feedback
     const form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
-      e.preventDefault();
+      // FormSubmit will handle the actual submission
+      // This just provides user feedback
       alert('Thank you for your reservation! We will contact you shortly to confirm.');
-      form.reset();
     });
 
     // Sticky navigation on scroll
@@ -648,5 +588,8 @@
       }
     });
   </script>
+
 </body>
 </html>
+
+
