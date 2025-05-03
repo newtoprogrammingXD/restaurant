@@ -2,545 +2,1318 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Delicious Bites - Restaurant</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious Bites - Premium Dining Experience</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Color Theme */
+    /* Color Theme and Base Styles */
     :root {
-      --primary-color: #e67e22; /* Orange */
-      --secondary-color: #2c3e50; /* Dark Blue */
-      --background-color: #f4f7f8; /* Light grey background instead of white */
-      --text-color: #333;
-      --white-color: #ffffff;
+      --primary-color: #e67e22; /* Warm orange */
+      --primary-dark: #cf711f;
+      --secondary-color: #2c3e50; /* Dark blue */
+      --secondary-light: #3d566e;
+      --accent-color: #e74c3c; /* For special highlights */
+      --light-bg: #f9f9f9;
+      --dark-text: #333;
+      --light-text: #fff;
+      --gray-text: #777;
+      --section-padding: 5rem 2rem;
+      --max-width: 1200px;
+      --border-radius: 12px;
+      --box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-color);
-      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--dark-text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    nav {
-      background-color: var(--secondary-color);
-      color: var(--white-color);
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+      font-weight: 700;
     }
 
-    nav .logo {
-      font-size: 1.5rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      margin-left: 20px;
-    }
-
-    nav ul li a {
-      color: var(--white-color);
+    a {
       text-decoration: none;
+      color: inherit;
     }
 
-    header {
-      background: url("restaurant.jpg") center/cover no-repeat;
-      height: 60vh;
-      color: var(--white-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-shadow: 2px 2px 4px #000;
-      text-align: center;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    header h1 {
-      font-size: 3rem;
-    }
-
-    section {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    #menu .menu-category {
-      margin-bottom: 2rem;
-    }
-
-    .menu-items {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .menu-items div {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      width: 200px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .menu-items div:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      margin: auto;
-    }
-
-    form input, form textarea, form button {
-      margin-bottom: 1rem;
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    form button {
-      background-color: var(--primary-color);
-      color: var(--white-color);
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    form button:hover {
-      background-color: #cf711f;
-      transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-
-    footer {
-      background-color: var(--secondary-color);
-      color: var(--white-color);
-      padding: 1rem;
-      text-align: center;
-    }
-
-    /* Enhanced Gallery Styles */
-    .gallery-container {
+    .container {
       width: 100%;
-      max-width: 1200px;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 20px;
+      padding: 0 20px;
     }
 
-    .gallery-title {
+    .section-title {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 2.5rem;
-      color: var(--secondary-color);
+      margin-bottom: 3rem;
       position: relative;
     }
 
-    .gallery-title:after {
-      content: '';
-      display: block;
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+
+    .section-title p {
+      color: var(--gray-text);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .title-decoration {
       width: 80px;
       height: 4px;
       background: var(--primary-color);
-      margin: 15px auto;
+      margin: 1.5rem auto;
+      border-radius: 2px;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      aspect-ratio: 1/1;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-
-    .gallery-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-item:hover .gallery-image {
-      transform: scale(1.1);
-    }
-
-    .image-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 15px;
-      transform: translateY(100%);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover .image-overlay {
-      transform: translateY(0);
-    }
-
-    .image-title {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-
-    .image-desc {
+    .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: var(--light-text);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       font-size: 0.9rem;
-      opacity: 0.8;
     }
 
-    /* Lightbox Styles */
-    .lightbox {
-      display: none;
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-color);
+      color: var(--light-text);
+    }
+
+    /* Navigation */
+    nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      z-index: 1000;
+      background: rgba(44, 62, 80, 0.95);
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
+      z-index: 1000;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
     }
 
-    .lightbox-content {
-      max-width: 90%;
-      max-height: 90%;
+    nav.scrolled {
+      padding: 0.8rem 5%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
-    .lightbox-image {
-      max-width: 100%;
-      max-height: 80vh;
-      border-radius: 5px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--light-text);
     }
 
-    .lightbox-caption {
-      color: white;
-      text-align: center;
-      margin-top: 15px;
-      font-size: 1.2rem;
-    }
-
-    .close-lightbox {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 2rem;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-
-    .close-lightbox:hover {
+    .logo span {
       color: var(--primary-color);
     }
 
-    .nav-arrows {
-      position: absolute;
-      top: 50%;
-      width: 100%;
+    .nav-links {
       display: flex;
-      justify-content: space-between;
-      padding: 0 20px;
-      transform: translateY(-50%);
+      list-style: none;
     }
 
-    .arrow {
-      color: white;
-      font-size: 2rem;
+    .nav-links li {
+      margin-left: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--light-text);
+      font-weight: 500;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .hamburger {
+      display: none;
       cursor: pointer;
-      background: rgba(0,0,0,0.5);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--light-text);
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--light-text);
+      font-size: 1.5rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+      }
+      40% {
+        transform: translateY(-20px) translateX(-50%);
+      }
+      60% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+    }
+
+    /* About Section */
+    .about {
+      padding: var(--section-padding);
+      background: var(--light-bg);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-img {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .about-img img {
+      transition: var(--transition);
+    }
+
+    .about-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      color: var(--gray-text);
+    }
+
+    .about-features {
+      margin-top: 2rem;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-icon {
+      background: var(--primary-color);
+      color: var(--light-text);
       width: 50px;
       height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s;
+      margin-right: 1rem;
+      flex-shrink: 0;
     }
 
-    .arrow:hover {
-      background: var(--primary-color);
+    .feature-text h4 {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Specials Section */
+    .specials {
+      padding: var(--section-padding);
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: var(--light-text);
+      position: relative;
+    }
+
+    .specials .section-title h2,
+    .specials .section-title p {
+      color: var(--light-text);
+    }
+
+    .specials .title-decoration {
+      background: var(--light-text);
+    }
+
+    .specials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .special-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .special-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      border-color: var(--primary-color);
+    }
+
+    .special-img {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .special-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .special-card:hover .special-img img {
       transform: scale(1.1);
     }
 
-    /* Smooth Scroll */
-    html {
-      scroll-behavior: smooth;
+    .special-content {
+      padding: 1.5rem;
+    }
+
+    .special-badge {
+      display: inline-block;
+      background: var(--primary-color);
+      color: var(--light-text);
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .special-content h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .special-content p {
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .special-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    /* Menu Section */
+    .menu {
+      padding: var(--section-padding);
+      background: var(--light-bg);
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .menu-tab {
+      padding: 10px 25px;
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .menu-tab.active,
+    .menu-tab:hover {
+      background: var(--primary-color);
+      color: var(--light-text);
+    }
+
+    .menu-category {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-category.active {
+      display: grid;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .menu-item {
+      display: flex;
+      background: var(--light-text);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .menu-img {
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+    }
+
+    .menu-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .menu-details {
+      padding: 1rem;
+      flex: 1;
+    }
+
+    .menu-details h3 {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .menu-details h3 span {
+      color: var(--primary-color);
+    }
+
+    .menu-details p {
+      color: var(--gray-text);
+      font-size: 0.9rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: var(--section-padding);
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    .testimonial-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .testimonial-slide {
+      text-align: center;
+      padding: 2rem;
+      display: none;
+    }
+
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .testimonial-rating {
+      color: #FFD700;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .testimonial-text:before,
+    .testimonial-text:after {
+      content: '"';
+      font-size: 3rem;
+      color: var(--primary-color);
+      opacity: 0.3;
+      position: absolute;
+    }
+
+    .testimonial-text:before {
+      top: -20px;
+      left: -30px;
+    }
+
+    .testimonial-text:after {
+      bottom: -40px;
+      right: -30px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .author-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 1rem;
+      border: 3px solid var(--primary-color);
+    }
+
+    .author-info h4 {
+      color: var(--secondary-color);
+      text-align: left;
+    }
+
+    .author-info p {
+      color: var(--gray-text);
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .testimonial-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 1rem;
+    }
+
+    .testimonial-nav button {
+      background: var(--primary-color);
+      color: var(--light-text);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-nav button:hover {
+      background: var(--secondary-color);
+      transform: scale(1.1);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .dot.active {
+      background: var(--primary-color);
+      transform: scale(1.2);
+    }
+
+    /* Chef Section */
+    .chef {
+      padding: var(--section-padding);
+      background: url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      position: relative;
+      color: var(--light-text);
+    }
+
+    .chef:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(44, 62, 80, 0.9);
+    }
+
+    .chef .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .chef .section-title h2 {
+      color: var(--light-text);
+    }
+
+    .chef-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .chef-img {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .chef-img img {
+      transition: var(--transition);
+    }
+
+    .chef-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .chef-info h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chef-info p {
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .chef-signature {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .signature-img {
+      width: 150px;
+      margin-right: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: var(--light-text);
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--primary-color);
+      transform: translateY(-5px);
+    }
+
+    /* Gallery */
+    .gallery {
+      padding: var(--section-padding);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      aspect-ratio: 1/1;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(230, 126, 34, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay i {
+      font-size: 2.5rem;
+      color: var(--light-text);
+      margin-bottom: 1rem;
+    }
+
+    .gallery-overlay h3 {
+      color: var(--light-text);
+      font-size: 1.2rem;
+    }
+
+    /* Reservation */
+    .reservation {
+      padding: var(--section-padding);
+      background: var(--light-bg);
+    }
+
+    .reservation-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .reservation-img {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    .reservation-img img {
+      transition: var(--transition);
+    }
+
+    .reservation-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .reservation-form {
+      background: var(--light-text);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: var(--border-radius);
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+    }
+
+    /* Instagram */
+    .instagram {
+      padding: var(--section-padding);
+      background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+      color: var(--light-text);
+    }
+
+    .instagram .section-title h2,
+    .instagram .section-title p {
+      color: var(--light-text);
+    }
+
+    .instagram .title-decoration {
+      background: var(--light-text);
+    }
+
+    .instagram-feed {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 3rem;
+    }
+
+    .instagram-post {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      aspect-ratio: 1/1;
+    }
+
+    .instagram-post img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .instagram-post:hover img {
+      transform: scale(1.1);
+    }
+
+    .instagram-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .instagram-post:hover .instagram-overlay {
+      opacity: 1;
+    }
+
+    .instagram-stats {
+      display: flex;
+      align-items: center;
+      color: var(--light-text);
+    }
+
+    .instagram-stats i {
+      margin-right: 5px;
+    }
+
+    .instagram-stats span {
+      margin-right: 15px;
+    }
+
+    .instagram-cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .instagram-cta .btn {
+      background: var(--light-text);
+      color: var(--secondary-color);
+    }
+
+    .instagram-cta .btn:hover {
+      background: var(--secondary-color);
+      color: var(--light-text);
+    }
+
+    /* Contact */
+    .contact {
+      padding: var(--section-padding);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: flex-start;
+      background: var(--light-bg);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--box-shadow);
+    }
+
+    .contact-icon {
+      background: var(--primary-color);
+      color: var(--light-text);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-text h3 {
+      color: var(--secondary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-text a {
+      color: var(--gray-text);
+      transition: var(--transition);
+    }
+
+    .contact-text a:hover {
+      color: var(--primary-color);
+    }
+
+    .contact-map {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      height: 100%;
+      min-height: 300px;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--secondary-color);
+      color: var(--light-text);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .footer-col h3:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary-color);
+    }
+
+    .footer-col p {
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    .footer-links li {
+      margin-bottom: 1rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: var(--light-text);
+      opacity: 0.8;
+      transition: var(--transition);
+      display: block;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--primary-color);
+      transform: translateX(5px);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: var(--light-text);
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      background: var(--primary-color);
+      transform: translateY(-5px);
+    }
+
+    .footer-newsletter input {
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+      font-family: inherit;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-bottom p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary-color);
+      color: var(--light-text);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--secondary-color);
+      transform: translateY(-5px);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .about-content,
+      .chef-content,
+      .reservation-container {
+        grid-template-columns: 1fr;
+      }
+
+      .chef-img,
+      .reservation-img {
+        order: -1;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--secondary-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .nav-links li {
+        margin: 1.5rem 0;
+      }
+
+      .hamburger {
+        display: block;
+        color: var(--light-text);
+        font-size: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      .menu-category {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      :root {
+        --section-padding: 3rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 10px 20px;
+      }
     }
   </style>
 </head>
-
 <body>
-
-<!-- Navigation -->
-<nav>
-  <div class="logo">Delicious Bites</div>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#menu">Menu</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#reservation">Reservation</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Hero Section -->
-<header id="home">
-  <h1>Welcome to Delicious Bites</h1>
-  <p>Where Every Bite Feels Like Home</p>
-</header>
-
-<!-- About Section -->
-<section id="about">
-  <h2>About Us</h2>
-  <p>We are passionate about serving freshly made delicious food with love and care.</p>
-</section>
-
-<!-- Menu Section -->
-<section id="menu">
-  <h2>Our Menu</h2>
-  
-  <div class="menu-category">
-    <h3>Starters</h3>
-    <div class="menu-items">
-      <div>Paneer Tikka</div>
-      <div>Veg Spring Roll</div>
-      <div>Chicken Wings</div>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#" class="logo">Delicious <span>Bites</span></a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#specials">Specials</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#chef">Chef</a></li>
+      <li><a href="#reservation">Reservation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
     </div>
-  </div>
+  </nav>
 
-  <div class="menu-category">
-    <h3>Main Course</h3>
-    <div class="menu-items">
-      <div>Butter Chicken</div>
-      <div>Veg Biryani</div>
-      <div>Paneer Butter Masala</div>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Experience Culinary Excellence</h1>
+      <p>Discover authentic flavors crafted with passion and served with love in the heart of the city</p>
+      <div class="hero-btns">
+        <a href="#reservation" class="btn">Reserve a Table</a>
+        <a href="#menu" class="btn btn-outline">View Menu</a>
+      </div>
     </div>
-  </div>
+    <a href="#about" class="scroll-down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
 
-  <div class="menu-category">
-    <h3>Desserts</h3>
-    <div class="menu-items">
-      <div>Gulab Jamun</div>
-      <div>Ice Cream Sundae</div>
-    </div>
-  </div>
-</section>
-
-<!-- Enhanced Gallery Section -->
-<section id="gallery">
-  <div class="gallery-container">
-    <h2 class="gallery-title">Our Gallery</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item" onclick="openLightbox(0)">
-        <img src="paneertikka.jpg" alt="Paneer Tikka" class="gallery-image">
-        <div class="image-overlay">
-          <h3 class="image-title">Paneer Tikka</h3>
-          <p class="image-desc">Marinated cottage cheese grilled to perfection</p>
-        </div>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Story</h2>
+        <div class="title-decoration"></div>
+        <p>Delicious Bites was founded in 2010 with a simple mission: to serve exceptional food in a warm, inviting atmosphere.</p>
       </div>
-      <div class="gallery-item" onclick="openLightbox(1)">
-        <img src="chickenbiryani.jpg" alt="Chicken Biryani" class="gallery-image">
-        <div class="image-overlay">
-          <h3 class="image-title">Chicken Biryani</h3>
-          <p class="image-desc">Aromatic rice with tender chicken pieces</p>
+      <div class="about-content">
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" alt="Restaurant Interior">
         </div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(2)">
-        <img src="dessert.jpg" alt="Dessert Delight" class="gallery-image">
-        <div class="image-overlay">
-          <h3 class="image-title">Dessert Platter</h3>
-          <p class="image-desc">Sweet endings to your meal</p>
-        </div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(3)">
-        <img src="restaurant-interior.jpg" alt="Restaurant Interior" class="gallery-image">
-        <div class="image-overlay">
-          <h3 class="image-title">Our Ambience</h3>
-          <p class="image-desc">Elegant dining experience</p>
-        </div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(4)">
-        <img src="chef.jpg" alt="Chef Cooking" class="gallery-image">
-        <div class="image-overlay">
-          <h3 class="image-title">Our Chef</h3>
-          <p class="image-desc">Master chef preparing your meal</p>
-        </div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox(5)">
-        <img src="drinks.jpg" alt="Refreshing Drinks" class="gallery-image">
-        <div class="image-overlay">
-          <h3 class="image-title">Signature Drinks</h3>
-          <p class="image-desc">Refreshing beverages</p>
+        <div class="about-text">
+          <h3>Welcome to Our Family</h3>
+          <p>At Delicious Bites, we believe that great food starts with the finest ingredients. Our chefs combine traditional recipes with modern techniques to create unforgettable dining experiences.</p>
+          <p>Every dish tells a story - of heritage, passion, and culinary artistry. We invite you to be part of our story.</p>
+          <div class="about-features">
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <div class="feature-text">
+                <h4>Fresh Ingredients</h4>
+                <p>Locally sourced, seasonal produce for maximum flavor</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <div class="feature-text">
+                <h4>Award Winning</h4>
+                <p>Recognized for culinary excellence since 2015</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-  <div class="nav-arrows">
-    <div class="arrow" onclick="changeSlide(-1)">&#10094;</div>
-    <div class="arrow" onclick="changeSlide(1)">&#10095;</div>
-  </div>
-  <div class="lightbox-content">
-    <img id="lightbox-image" class="lightbox-image" src="">
-    <div id="lightbox-caption" class="lightbox-caption"></div>
-  </div>
-</div>
-
-<!-- Reservation Section -->
-<section id="reservation">
-  <h2>Reserve a Table</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <input type="text" placeholder="Phone Number" required>
-    <input type="date" required>
-    <input type="time" required>
-    <textarea placeholder="Special Requests" rows="4"></textarea>
-    <button type="submit">Reserve</button>
-  </form>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: contact@deliciousbites.com</p>
-  <p>Phone: +91-1234567890</p>
-  <p>Address: 123, Main Street, Bangalore</p>
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Delicious Bites. All Rights Reserved.</p>
-</footer>
-
-<!-- Gallery JavaScript -->
-<script>
-  // Gallery images data
-  const galleryImages = [
-    {
-      src: "paneertikka.jpg",
-      title: "Paneer Tikka",
-      desc: "Marinated cottage cheese grilled to perfection"
-    },
-    {
-      src: "chickenbiryani.jpg",
-      title: "Chicken Biryani",
-      desc: "Aromatic rice with tender chicken pieces"
-    },
-    {
-      src: "dessert.jpg",
-      title: "Dessert Platter",
-      desc: "Sweet endings to your meal"
-    },
-    {
-      src: "restaurant-interior.jpg",
-      title: "Our Ambience",
-      desc: "Elegant dining experience"
-    },
-    {
-      src: "chef.jpg",
-      title: "Our Chef",
-      desc: "Master chef preparing your meal"
-    },
-    {
-      src: "drinks.jpg",
-      title: "Signature Drinks",
-      desc: "Refreshing beverages"
-    }
-  ];
-
-  let currentSlide = 0;
-
-  // Open lightbox
-  function openLightbox(index) {
-    currentSlide = index;
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-image');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    
-    lightboxImg.src = galleryImages[index].src;
-    lightboxCaption.innerHTML = `<strong>${galleryImages[index].title}</strong> - ${galleryImages[index].desc}`;
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-
-  // Close lightbox
-  function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-
-  // Change slide in lightbox
-  function changeSlide(direction) {
-    currentSlide += direction;
-    
-    // Wrap around if at beginning or end
-    if (currentSlide < 0) {
-      currentSlide = galleryImages.length - 1;
-    } else if (currentSlide >= galleryImages.length) {
-      currentSlide = 0;
-    }
-    
-    openLightbox(currentSlide);
-  }
-
-  // Close lightbox when clicking outside image
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeLightbox();
-    }
-  });
-
-  // Keyboard navigation
-  document.addEventListener('keydown', function(e) {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox.style.display === 'flex') {
-      if (e.key === 'Escape') {
-        closeLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        changeSlide(-1);
-      } else if (e.key === 'ArrowRight') {
-        changeSlide(1);
-      }
-    }
-  });
-</script>
-
-</body>
-</html>
+  <!-- Specials Section -->
+  <section class="specials" id="specials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Today's Specials</h2>
+        <div class="title-decoration"></div>
+        <p>Our chef's carefully curated selection of seasonal specialties</p>
+      </div>
+      <div class="specials-grid">
+        <div class="special-card">
+          <div class="special-img">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Butter Chicken">
+          </div>
+          <div class="special-content">
+            <span class="special-badge">Chef's Choice</span>
+            <h3>Butter Chicken</h3>
+            <p>Tender chicken in rich tomato gravy with aromatic spices and cream</p>
+            <div class="special-price">
+              <span class="price">₹350</span>
+              <a href="#reservation" class="btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="special-card">
+          <div class="special-img">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paneer Tikka">
+          </div>
+          <div class="special-content">
+            <span class
