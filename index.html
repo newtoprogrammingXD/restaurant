@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,316 +14,447 @@
       --white-color: #ffffff;
     }
 
-```
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
 
-/* Navigation */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-}
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--secondary-color);
+      color: var(--white-color);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
 
-nav .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
 
-nav ul li {
-  margin-left: 20px;
-}
+    nav ul li {
+      margin-left: 20px;
+    }
 
-nav ul li a {
-  color: var(--white-color);
-  text-decoration: none;
-  transition: color 0.3s;
-}
+    nav ul li a {
+      color: var(--white-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-nav ul li a:hover {
-  color: var(--primary-color);
-}
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
 
-/* Header/Hero Section */
-header {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
-  height: 80vh;
-  color: var(--white-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-  margin-top: 60px;
-}
+    /* Header/Hero Section */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+      height: 80vh;
+      color: var(--white-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+      margin-top: 60px;
+    }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
 
-header p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin-bottom: 2rem;
-}
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
 
-.btn {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  padding: 10px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s;
-}
+    .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      padding: 10px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
 
-.btn:hover {
-  background-color: #d35400;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+    .btn:hover {
+      background-color: #d35400;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
-/* Sections */
-section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    /* Sections */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: var(--secondary-color);
-  position: relative;
-}
+    section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--secondary-color);
+      position: relative;
+    }
 
-section h2:after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
-  background: var(--primary-color);
-  margin: 15px auto;
-}
+    section h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 15px auto;
+    }
 
-/* Menu Section */
-#menu .menu-category {
-  margin-bottom: 3rem;
-}
+    /* Menu Section */
+    #menu .menu-category {
+      margin-bottom: 3rem;
+    }
 
-#menu .menu-category h3 {
-  color: var(--secondary-color);
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
+    #menu .menu-category h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
 
-.menu-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
 
-.menu-item {
-  background: var(--white-color);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s;
-}
+    .menu-item {
+      background: var(--white-color);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
 
-.menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
 
-.menu-item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
+    .menu-item.selected {
+      box-shadow: 0 0 0 3px var(--primary-color);
+    }
 
-.menu-item-content {
-  padding: 1.5rem;
-}
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-.menu-item h4 {
-  margin: 0 0 0.5rem;
-  color: var(--secondary-color);
-}
+    .menu-item-content {
+      padding: 1.5rem;
+    }
 
-.menu-item p {
-  margin: 0 0 1rem;
-  color: var(--text-color);
-  font-size: 0.9rem;
-}
+    .menu-item h4 {
+      margin: 0 0 0.5rem;
+      color: var(--secondary-color);
+    }
 
-.price {
-  font-weight: bold;
-  color: var(--primary-color);
-}
+    .menu-item p {
+      margin: 0 0 1rem;
+      color: var(--text-color);
+      font-size: 0.9rem;
+    }
 
-/* Gallery Section */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
+    .price {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
 
-.gallery-item {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  height: 200px;
-}
+    /* Gallery Section */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 200px;
+    }
 
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
 
-.gallery-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(230, 126, 34, 0.7);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s;
-  color: white;
-}
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
 
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(230, 126, 34, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: white;
+    }
 
-.gallery-overlay i {
-  font-size: 2.5rem;
-  color: var(--light-text);
-  margin-bottom: 1rem;
-}
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
 
-.gallery-overlay h3 {
-  color: var(--light-text);
-  font-size: 1.2rem;
-}
+    .gallery-overlay i {
+      font-size: 2.5rem;
+      color: var(--light-text);
+      margin-bottom: 1rem;
+    }
 
-/* Reservation Form */
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  background: var(--white-color);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+    .gallery-overlay h3 {
+      color: var(--light-text);
+      font-size: 1.2rem;
+    }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
+    /* Reservation Form */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: var(--white-color);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
 
-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
 
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-family: inherit;
-}
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
 
-form textarea {
-  height: 100px;
-}
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+    }
 
-form button {
-  width: 100%;
-  padding: 12px;
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
+    form textarea {
+      height: 100px;
+    }
 
-form button:hover {
-  background-color: #d35400;
-}
+    form button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: var(--white-color);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
 
-/* Contact Section */
-#contact {
-  text-align: center;
-}
+    form button:hover {
+      background-color: #d35400;
+    }
 
-/* Footer */
-footer {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-  text-align: center;
-  padding: 2rem;
-  margin-top: 2rem;
-}
+    /* Cart System */
+    .cart-container {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: var(--white-color);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 350px;
+      max-height: 70vh;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+      padding: 1rem;
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-  }
-  
-  header h1 {
-    font-size: 2.2rem;
-  }
-  
-  .menu-items {
-    grid-template-columns: 1fr;
-  }
-}
-```
+    .cart-container.visible {
+      display: block;
+    }
 
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-items {
+      margin-bottom: 1rem;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-weight: bold;
+    }
+
+    .cart-item-price {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .cart-item-quantity {
+      display: flex;
+      align-items: center;
+    }
+
+    .quantity-btn {
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .cart-total {
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-align: right;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid var(--primary-color);
+    }
+
+    .cart-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+
+    .cart-toggle {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1001;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--secondary-color);
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Contact Section */
+    #contact {
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-color);
+      color: var(--white-color);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .menu-items {
+        grid-template-columns: 1fr;
+      }
+
+      .cart-container {
+        width: 90%;
+        right: 5%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -341,8 +471,31 @@ footer {
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Cart Toggle Button -->
+  <button class="cart-toggle" id="cartToggle">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
 
+  <!-- Cart Container -->
+  <div class="cart-container" id="cartContainer">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be added here dynamically -->
+    </div>
+    <div class="cart-total">
+      Total: ₹<span id="cartTotal">0</span>
+    </div>
+    <div class="cart-actions">
+      <button class="btn" id="clearCart">Clear Cart</button>
+      <button class="btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
   <header id="home">
     <h1>Welcome to Delicious Bites</h1>
     <p>Where Every Bite Feels Like Home</p>
@@ -350,7 +503,6 @@ footer {
   </header>
 
   <!-- About Section -->
-
   <section id="about">
     <h2>About Us</h2>
     <p>We are passionate about serving freshly made delicious food with love and care. Our restaurant has been serving authentic flavors since 2010, using only the finest ingredients sourced from local farmers and producers.</p>
@@ -358,98 +510,93 @@ footer {
   </section>
 
   <!-- Menu Section -->
-
   <section id="menu">
     <h2>Our Menu</h2>
 
-```
-<div class="menu-category">
-  <h3>Starters</h3>
-  <div class="menu-items">
-    <div class="menu-item">
-      <img src="paneertikka.jpg" alt="Paneer Tikka">
-      <div class="menu-item-content">
-        <h4>Paneer Tikka</h4>
-        <p>Marinated cottage cheese grilled to perfection</p>
-        <span class="price">₹250</span>
+    <div class="menu-category">
+      <h3>Starters</h3>
+      <div class="menu-items">
+        <div class="menu-item" data-name="Paneer Tikka" data-price="250">
+          <img src="paneertikka.jpg" alt="Paneer Tikka">
+          <div class="menu-item-content">
+            <h4>Paneer Tikka</h4>
+            <p>Marinated cottage cheese grilled to perfection</p>
+            <span class="price">₹250</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Chicken Tandoori" data-price="320">
+          <img src="tandoori chicken.jpg" alt="Chicken Tandoori">
+          <div class="menu-item-content">
+            <h4>Chicken Tandoori</h4>
+            <p>Crispy wings with our signature sauce</p>
+            <span class="price">₹320</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Veg Spring Roll" data-price="180">
+          <img src="vegspringroll.jpg" alt="Spring Roll">
+          <div class="menu-item-content">
+            <h4>Veg Spring Roll</h4>
+            <p>Crispy rolls with fresh vegetables</p>
+            <span class="price">₹180</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="menu-item">
-      <img src="tandoori chicken.jpg" alt="Chicken Tandoori">
-      <div class="menu-item-content">
-        <h4>Chicken Tandoori</h4>
-        <p>Crispy wings with our signature sauce</p>
-        <span class="price">₹320</span>
-      </div>
-    </div>
-    <div class="menu-item">
-      <img src="vegspringroll.jpg" alt="Spring Roll">
-      <div class="menu-item-content">
-        <h4>Veg Spring Roll</h4>
-        <p>Crispy rolls with fresh vegetables</p>
-        <span class="price">₹180</span>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="menu-category">
-  <h3>Main Course</h3>
-  <div class="menu-items">
-    <div class="menu-item">
-      <img src="butter chicken.jpg" alt="Butter Chicken">
-      <div class="menu-item-content">
-        <h4>Butter Chicken</h4>
-        <p>Tender chicken in rich tomato gravy</p>
-        <span class="price">₹350</span>
+    <div class="menu-category">
+      <h3>Main Course</h3>
+      <div class="menu-items">
+        <div class="menu-item" data-name="Butter Chicken" data-price="350">
+          <img src="butter chicken.jpg" alt="Butter Chicken">
+          <div class="menu-item-content">
+            <h4>Butter Chicken</h4>
+            <p>Tender chicken in rich tomato gravy</p>
+            <span class="price">₹350</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Veg Biryani" data-price="300">
+          <img src="vegetable biryani.jpg" alt="Biryani">
+          <div class="menu-item-content">
+            <h4>Veg Biryani</h4>
+            <p>Fragrant rice with mixed vegetables</p>
+            <span class="price">₹300</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Paneer Butter Masala" data-price="280">
+          <img src="pannerbuttermasala.jpg" alt="Paneer Butter Masala">
+          <div class="menu-item-content">
+            <h4>Paneer Butter Masala</h4>
+            <p>Cottage cheese in creamy tomato sauce</p>
+            <span class="price">₹280</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="menu-item">
-      <img src="vegetable biryani.jpg" alt="Biryani">
-      <div class="menu-item-content">
-        <h4>Veg Biryani</h4>
-        <p>Fragrant rice with mixed vegetables</p>
-        <span class="price">₹300</span>
-      </div>
-    </div>
-    <div class="menu-item">
-      <img src="pannerbuttermasala.jpg" alt="Paneer Butter Masala">
-      <div class="menu-item-content">
-        <h4>Paneer Butter Masala</h4>
-        <p>Cottage cheese in creamy tomato sauce</p>
-        <span class="price">₹280</span>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="menu-category">
-  <h3>Desserts</h3>
-  <div class="menu-items">
-    <div class="menu-item">
-      <img src="gulabjamun.jpg" alt="Gulab Jamun">
-      <div class="menu-item-content">
-        <h4>Gulab Jamun</h4>
-        <p>Soft milk balls in sugar syrup</p>
-        <span class="price">₹120</span>
+    <div class="menu-category">
+      <h3>Desserts</h3>
+      <div class="menu-items">
+        <div class="menu-item" data-name="Gulab Jamun" data-price="120">
+          <img src="gulabjamun.jpg" alt="Gulab Jamun">
+          <div class="menu-item-content">
+            <h4>Gulab Jamun</h4>
+            <p>Soft milk balls in sugar syrup</p>
+            <span class="price">₹120</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Ice Cream Sundae" data-price="150">
+          <img src="dessert.jpg" alt="Ice Cream">
+          <div class="menu-item-content">
+            <h4>Ice Cream Sundae</h4>
+            <p>Vanilla ice cream with toppings</p>
+            <span class="price">₹150</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="menu-item">
-      <img src="dessert.jpg" alt="Ice Cream">
-      <div class="menu-item-content">
-        <h4>Ice Cream Sundae</h4>
-        <p>Vanilla ice cream with toppings</p>
-        <span class="price">₹150</span>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
   </section>
 
   <!-- Gallery Section -->
-
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
@@ -484,60 +631,61 @@ footer {
     </div>
   </section>
 
-  <!-- Reservation Section (Updated with FormSubmit) -->
-
+  <!-- Reservation Section -->
   <section id="reservation">
     <h2>Reserve a Table</h2>
-    <form action="https://formsubmit.co/rohith9880773622@gmail.com" method="POST">
-      <!-- Add these hidden fields -->
+    <form id="reservationForm" action="https://formsubmit.co/rohith9880773622@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="New Table Reservation!">
       <input type="hidden" name="_autoresponse" value="Thank you for booking at Delicious Bites! We'll confirm your reservation shortly.">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="order_items" id="orderItemsInput">
+      <input type="hidden" name="order_total" id="orderTotalInput">
 
-```
-  <div class="form-group">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" name="name" placeholder="Your Name" required>
-  </div>
-  <div class="form-group">
-    <label for="email">Your Email</label>
-    <input type="email" id="email" name="email" placeholder="Your Email" required>
-  </div>
-  <div class="form-group">
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-  </div>
-  <div class="form-group">
-    <label for="date">Date</label>
-    <input type="date" id="date" name="date" required>
-  </div>
-  <div class="form-group">
-    <label for="time">Time</label>
-    <input type="time" id="time" name="time" required>
-  </div>
-  <div class="form-group">
-    <label for="guests">Number of Guests</label>
-    <select id="guests" name="guests" required>
-      <option value="">Select</option>
-      <option value="1">1 Person</option>
-      <option value="2">2 People</option>
-      <option value="3">3 People</option>
-      <option value="4">4 People</option>
-      <option value="5+">5+ People</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="requests">Special Requests</label>
-    <textarea id="requests" name="requests" rows="4" placeholder="Any special requirements?"></textarea>
-  </div>
-  <button type="submit" class="btn">Reserve Now</button>
-</form>
-```
-
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <div class="form-group">
+        <label for="guests">Number of Guests</label>
+        <select id="guests" name="guests" required>
+          <option value="">Select</option>
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4 People</option>
+          <option value="5+">5+ People</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" name="requests" rows="4" placeholder="Any special requirements?"></textarea>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="includeOrder" name="include_order"> Include my food order with reservation
+        </label>
+      </div>
+      <button type="submit" class="btn">Reserve Now</button>
+    </form>
   </section>
 
   <!-- Contact Section -->
-
   <section id="contact">
     <h2>Contact Us</h2>
     <div style="text-align: center; max-width: 600px; margin: 0 auto;">
@@ -549,12 +697,179 @@ footer {
   </section>
 
   <!-- Footer -->
-
   <footer>
-    <p>&copy; @2025 Delicious Bites. All Rights Reserved.</p>
+    <p>&copy; 2025 Delicious Bites. All Rights Reserved.</p>
   </footer>
 
   <script>
+    // Cart functionality
+    const cart = {
+      items: [],
+      total: 0,
+      
+      addItem: function(name, price) {
+        const existingItem = this.items.find(item => item.name === name);
+        
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          this.items.push({
+            name: name,
+            price: price,
+            quantity: 1
+          });
+        }
+        
+        this.calculateTotal();
+        this.updateCartDisplay();
+        this.saveToLocalStorage();
+      },
+      
+      removeItem: function(name) {
+        const itemIndex = this.items.findIndex(item => item.name === name);
+        
+        if (itemIndex !== -1) {
+          if (this.items[itemIndex].quantity > 1) {
+            this.items[itemIndex].quantity -= 1;
+          } else {
+            this.items.splice(itemIndex, 1);
+          }
+          
+          this.calculateTotal();
+          this.updateCartDisplay();
+          this.saveToLocalStorage();
+        }
+      },
+      
+      clearCart: function() {
+        this.items = [];
+        this.total = 0;
+        this.updateCartDisplay();
+        this.saveToLocalStorage();
+      },
+      
+      calculateTotal: function() {
+        this.total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      },
+      
+      updateCartDisplay: function() {
+        const cartItemsElement = document.getElementById('cartItems');
+        const cartTotalElement = document.getElementById('cartTotal');
+        const cartCountElement = document.getElementById('cartCount');
+        
+        // Update cart items list
+        cartItemsElement.innerHTML = '';
+        
+        if (this.items.length === 0) {
+          cartItemsElement.innerHTML = '<p>Your cart is empty</p>';
+        } else {
+          this.items.forEach(item => {
+            const cartItemElement = document.createElement('div');
+            cartItemElement.className = 'cart-item';
+            cartItemElement.innerHTML = `
+              <div class="cart-item-info">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-price">₹${item.price * item.quantity}</div>
+              </div>
+              <div class="cart-item-quantity">
+                <button class="quantity-btn minus" data-name="${item.name}">-</button>
+                <span>${item.quantity}</span>
+                <button class="quantity-btn plus" data-name="${item.name}">+</button>
+              </div>
+            `;
+            cartItemsElement.appendChild(cartItemElement);
+          });
+        }
+        
+        // Update total and count
+        cartTotalElement.textContent = this.total;
+        cartCountElement.textContent = this.items.reduce((sum, item) => sum + item.quantity, 0);
+      },
+      
+      saveToLocalStorage: function() {
+        localStorage.setItem('cart', JSON.stringify(this.items));
+      },
+      
+      loadFromLocalStorage: function() {
+        const savedCart = localStorage.getItem('cart');
+        if (savedCart) {
+          this.items = JSON.parse(savedCart);
+          this.calculateTotal();
+          this.updateCartDisplay();
+        }
+      },
+      
+      getOrderSummary: function() {
+        return this.items.map(item => `${item.name} (${item.quantity}x) - ₹${item.price * item.quantity}`).join('\n');
+      },
+      
+      getOrderTotal: function() {
+        return this.total;
+      }
+    };
+
+    // Initialize cart
+    cart.loadFromLocalStorage();
+
+    // Toggle cart visibility
+    const cartToggle = document.getElementById('cartToggle');
+    const cartContainer = document.getElementById('cartContainer');
+    const closeCart = document.getElementById('closeCart');
+    
+    cartToggle.addEventListener('click', () => {
+      cartContainer.classList.toggle('visible');
+    });
+    
+    closeCart.addEventListener('click', () => {
+      cartContainer.classList.remove('visible');
+    });
+
+    // Clear cart
+    document.getElementById('clearCart').addEventListener('click', () => {
+      cart.clearCart();
+    });
+
+    // Checkout button
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (cart.items.length === 0) {
+        alert('Your cart is empty. Please add some items first.');
+      } else {
+        window.location.href = '#reservation';
+        cartContainer.classList.remove('visible');
+        document.getElementById('includeOrder').checked = true;
+      }
+    });
+
+    // Quantity buttons
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('plus')) {
+        const itemName = e.target.getAttribute('data-name');
+        const item = cart.items.find(item => item.name === itemName);
+        if (item) {
+          cart.addItem(item.name, item.price);
+        }
+      } else if (e.target.classList.contains('minus')) {
+        const itemName = e.target.getAttribute('data-name');
+        cart.removeItem(itemName);
+      }
+    });
+
+    // Add menu items to cart
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const name = item.getAttribute('data-name');
+        const price = parseInt(item.getAttribute('data-price'));
+        
+        // Add visual feedback
+        item.classList.add('selected');
+        setTimeout(() => {
+          item.classList.remove('selected');
+        }, 500);
+        
+        cart.addItem(name, price);
+      });
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -570,13 +885,32 @@ footer {
       });
     });
 
-    // Form submission feedback
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(e) {
+    // Form submission
+    const reservationForm = document.getElementById('reservationForm');
+    reservationForm.addEventListener('submit', function(e) {
+      // If "include order" is checked, add order details to form
+      const includeOrder = document.getElementById('includeOrder').checked;
+      
+      if (includeOrder && cart.items.length > 0) {
+        document.getElementById('orderItemsInput').value = cart.getOrderSummary();
+        document.getElementById('orderTotalInput').value = cart.getOrderTotal();
+      } else {
+        document.getElementById('orderItemsInput').value = '';
+        document.getElementById('orderTotalInput').value = '';
+      }
+      
       // FormSubmit will handle the actual submission
-      // This just provides user feedback
       alert('Thank you for your reservation! We will contact you shortly to confirm.');
+      
+      // Clear the cart if order was included
+      if (includeOrder && cart.items.length > 0) {
+        cart.clearCart();
+      }
     });
+
+    // Set minimum date for reservation (today)
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').min = today;
 
     // Sticky navigation on scroll
     window.addEventListener('scroll', function() {
@@ -588,8 +922,5 @@ footer {
       }
     });
   </script>
-
 </body>
 </html>
-
-
